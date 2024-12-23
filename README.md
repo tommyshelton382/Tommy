@@ -21,7 +21,7 @@
             text-align: center;
         }
         header h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin: 0;
         }
         header p {
@@ -31,35 +31,32 @@
         nav {
             background-color: #00251a;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             padding: 10px 0;
         }
         nav a {
             color: white;
-            margin: 0 15px;
             font-size: 1rem;
             text-decoration: none;
             text-transform: uppercase;
+            margin: 0 10px;
         }
         nav a:hover {
             text-decoration: underline;
         }
         .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 20px;
+            text-align: center;
+            padding: 40px 20px;
             background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
             color: white;
         }
         .hero h2 {
-            font-size: 2.5rem;
-            margin: 0;
+            font-size: 2rem;
+            margin-bottom: 15px;
         }
         .hero p {
             font-size: 1.2rem;
-            margin-top: 15px;
+            margin-bottom: 20px;
         }
         .hero .cta-button {
             background-color: #00796b;
@@ -69,7 +66,6 @@
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
         .hero .cta-button:hover {
             background-color: #004d40;
@@ -84,65 +80,41 @@
             margin-bottom: 30px;
             color: #004d40;
         }
-        .features {
+        .courses {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        .feature-box {
+        .course-box {
             background-color: white;
             width: 30%;
-            padding: 20px;
             margin-bottom: 20px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        .feature-box i {
-            font-size: 2rem;
-            color: #00796b;
-            margin-bottom: 10px;
+        .course-box img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
-        .feature-box h3 {
-            font-size: 1.3rem;
+        .course-box h3 {
             color: #004d40;
             margin-bottom: 10px;
         }
-        .testimonials, .faculty {
-            background-color: #e8f5e9;
-            padding: 30px 20px;
-            border-radius: 8px;
-        }
-        .testimonial, .faculty-member {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .testimonial img, .faculty-member img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-        .testimonial p, .faculty-member p {
+        .course-box p {
             font-size: 1rem;
-            color: #333;
+            color: #666;
         }
-        .pricing {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .pricing .price {
-            font-size: 2rem;
-            color: #00796b;
-            font-weight: bold;
+        .course-box .cta-button {
+            margin-top: 10px;
         }
         footer {
             background-color: #004d40;
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 30px;
         }
         footer a {
             color: #80cbc4;
@@ -154,20 +126,25 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .features {
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero {
+                padding: 20px;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .features, .courses {
                 flex-direction: column;
                 align-items: center;
             }
-            .feature-box {
+            .feature-box, .course-box {
                 width: 90%;
-            }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero img {
-                width: 100%;
-                margin-top: 20px;
             }
         }
     </style>
@@ -189,73 +166,37 @@
 
 <!-- Hero Section -->
 <section class="hero">
-    <div>
-        <h2>Learn, Grow, and Build Your Tree Service Business</h2>
-        <p>Our academy offers comprehensive courses to turn your tree service skills into a thriving business.</p>
-        <button class="cta-button" onclick="window.location.href='#courses'">Explore Courses</button>
-    </div>
+    <h2>Learn, Grow, and Build Your Tree Service Business</h2>
+    <p>Our academy offers comprehensive courses to turn your tree service skills into a thriving business.</p>
+    <button class="cta-button" onclick="window.location.href='#courses'">Explore Courses</button>
 </section>
 
 <!-- Main Content -->
 <div class="container">
-    <!-- Features Section -->
-    <h2 class="section-title">Why Choose Us?</h2>
-    <div class="features">
-        <div class="feature-box">
-            <i class="fas fa-tree"></i>
-            <h3>Expert Training</h3>
-            <p>Learn from professionals with years of experience in the tree service industry.</p>
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2 class="section-title">Our Courses</h2>
+        <div class="courses">
+            <div class="course-box">
+                <img src="https://via.placeholder.com/300x200" alt="Tree Climbing">
+                <h3>Tree Climbing Mastery</h3>
+                <p>Learn advanced climbing techniques and how to use climbing gear safely and effectively.</p>
+                <button class="cta-button">Enroll Now</button>
+            </div>
+            <div class="course-box">
+                <img src="https://via.placeholder.com/300x200" alt="Bucket Truck Operations">
+                <h3>Bucket Truck Operations</h3>
+                <p>Master the use of bucket trucks for efficient and safe tree access and trimming.</p>
+                <button class="cta-button">Enroll Now</button>
+            </div>
+            <div class="course-box">
+                <img src="https://via.placeholder.com/300x200" alt="Business Growth">
+                <h3>Starting a Tree Service Business</h3>
+                <p>Learn how to start, market, and grow a profitable tree service business.</p>
+                <button class="cta-button">Enroll Now</button>
+            </div>
         </div>
-        <div class="feature-box">
-            <i class="fas fa-chart-line"></i>
-            <h3>Proven Strategies</h3>
-            <p>Get insights and strategies that guarantee business growth and success.</p>
-        </div>
-        <div class="feature-box">
-            <i class="fas fa-handshake"></i>
-            <h3>Business Support</h3>
-            <p>Receive ongoing support to help you scale your business effectively.</p>
-        </div>
-    </div>
-
-    <!-- Testimonials Section -->
-    <div class="testimonials">
-        <h2 class="section-title">What Our Students Say</h2>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/80" alt="Student">
-            <p>"Tree Service Academy changed my life. I went from struggling to running a profitable business in less than a year!" - John D.</p>
-        </div>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/80" alt="Student">
-            <p>"The course is packed with practical advice and tools. Highly recommended!" - Sarah P.</p>
-        </div>
-    </div>
-
-    <!-- Faculty Section -->
-    <div class="faculty">
-        <h2 class="section-title">Meet Our Instructors</h2>
-        <div class="faculty-member">
-            <img src="https://via.placeholder.com/80" alt="Instructor">
-            <p><strong>Mark Johnson</strong> - Certified Arborist with 15 years of field experience.</p>
-        </div>
-        <div class="faculty-member">
-            <img src="https://via.placeholder.com/80" alt="Instructor">
-            <p><strong>Emily Smith</strong> - Business strategist and marketing expert specializing in tree services.</p>
-        </div>
-    </div>
-
-    <!-- Pricing Section -->
-    <div class="pricing">
-        <h2 class="section-title">Course Pricing</h2>
-        <p>Get lifetime access to all modules, resources, and updates.</p>
-        <div class="price">$997 or 3 payments of $349</div>
-        <button class="cta-button" onclick="window.location.href='https://www.paypal.com/paypalme/YourPayPalLinkHere'">
-            Pay with PayPal
-        </button>
-        <button class="cta-button" onclick="window.location.href='https://buy.stripe.com/test_XXXXXXX'">
-            Pay with Stripe
-        </button>
-    </div>
+    </section>
 </div>
 
 <!-- Footer -->
